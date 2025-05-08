@@ -1,0 +1,268 @@
+login html<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הרשמה כעסק</title>
+  <link rel="stylesheet" href="login.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+    }
+
+    body::before, body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(0,255,150,0.15), transparent 70%);
+      z-index: 1;
+    }
+    body::before { left: 0; }
+    body::after { right: 0; }
+
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #2c3e50;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 10;
+    }
+
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    .main-nav li {
+      margin: 0 20px;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #ecf0f1;
+      font-size: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .main-nav a:hover {
+      background-color: #3498db;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      height: 85vh;
+      margin-top: 80px;
+      box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 5;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .image-container {
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .fade-in {
+      opacity: 1 !important;
+    }
+
+    .form-container {
+      width: 50%;
+      height: 100%;
+      padding: 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #00ffc8;
+      text-align: center;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    input, select, textarea {
+      background-color: #eee;
+      color: #000;
+    }
+
+    button {
+      background-color: #00ffc8;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #00d6aa;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-text {
+      max-width: 100%;
+    }
+
+    .flag-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 30px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Israel.svg');
+      background-size: cover;
+      background-position: center;
+      z-index: 20;
+    }
+
+    /* רספונסיביות */
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .form-container {
+        max-width: 100%;
+        padding: 20px;
+      }
+
+      .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .main-nav li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="flag-container"></div>
+
+  <header class="main-nav">
+    <ul>
+      <li><a href="../index/index.html">דף הבית</a></li>
+      <li><a href="../categories/categories.html">קטגוריות</a></li>
+      <li><a href="../about/about.html">אודות</a></li>
+    </ul>
+  </header>
+
+  <div class="main-container">
+    <div class="image-container">
+      <img id="business-image" src="https://i.imgur.com/KwlU7hC.jpeg" alt="תמונה לעסק">
+    </div>
+
+    <div class="form-container">
+      <h2>הרשמה כעסק</h2>
+      <form id="business-register-form">
+        <input type="text" id="business-name" placeholder="שם העסק" required>
+        <input type="tel" id="business-phone" placeholder="מספר טלפון" required>
+        <input type="email" id="business-email" placeholder="דואר אלקטרוני" required>
+        <select id="business-category" required>
+          <option value="">בחר תחום עיסוק</option>
+          <option value="אוכל">אוכל</option>
+          <option value="ביגוד">ביגוד</option>
+          <option value="רהיטים">רהיטים</option>
+          <option value="קודים">קודים</option>
+        </select>
+        <textarea id="business-description" placeholder="תיאור העסק שלך" rows="4" required></textarea>
+        <input type="password" id="business-password" placeholder="סיסמה" required>
+        <button type="submit">התחבר כעסק</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <span class="footer-text">אחריי💡TECH</span>
+    </div>
+  </footer>
+
+  <script>
+    let currentImage = 0;
+    const images = [
+      "https://i.imgur.com/KwlU7hC.jpeg",
+      "https://images.pexels.com/photos/1645668/pexels-photo-1645668.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ];
+
+    function changeImage() {
+      currentImage = (currentImage + 1) % images.length;
+      const imageElement = document.getElementById("business-image");
+      imageElement.classList.remove("fade-in");
+      imageElement.src = images[currentImage];
+      imageElement.classList.add("fade-in");
+    }
+
+    setInterval(changeImage, 7000);
+  </script>
+</body>
+</html>

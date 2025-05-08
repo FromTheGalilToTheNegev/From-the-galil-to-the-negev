@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לוח אירועים</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .events-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .event {
+            background-color: #e2e2e2;
+            border-radius: 8px;
+            width: 30%;
+            padding: 15px;
+            box-sizing: border-box;
+            transition: transform 0.3s;
+        }
+
+        .event:hover {
+            transform: scale(1.05);
+        }
+
+        .event h2 {
+            margin: 0;
+            color: #444;
+            font-size: 1.2em;
+        }
+
+        .event p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .event .date {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .event .time {
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .event {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .event {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>לוח אירועים</h1>
+
+    <div class="events-wrapper">
+        <!-- אירוע 1 -->
+        <div class="event">
+            <h2>סדנת שיווק דיגיטלי</h2>
+            <p class="date">תאריך: 5 במאי 2025</p>
+            <p class="time">שעה: 10:00 - 12:00</p>
+            <p>מקום: מרכז עסקים תל אביב</p>
+        </div>
+
+        <!-- אירוע 2 -->
+        <div class="event">
+            <h2>הרצאה על פיתוח עסקי</h2>
+            <p class="date">תאריך: 12 במאי 2025</p>
+            <p class="time">שעה: 19:00 - 20:30</p>
+            <p>מקום: מרכז הכנסים ירושלים</p>
+        </div>
+
+        <!-- אירוע 3 -->
+        <div class="event">
+            <h2>כנס טכנולוגיה ושיווק</h2>
+            <p class="date">תאריך: 20 במאי 2025</p>
+            <p class="time">שעה:

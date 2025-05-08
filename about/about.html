@@ -1,0 +1,278 @@
+ <!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>אודות</title>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <style>
+    /* ---------------------- */
+    /* עיצוב כללי של האתר   */
+    /* ---------------------- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Varela Round', sans-serif;
+      direction: rtl;
+      color: black;
+      background-image: url('https://images2.alphacoders.com/655/thumb-1920-6552.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    /* ---------------------- */
+    /* סרגל ניווט (Main Navigation) */
+    /* ---------------------- */
+    .main-nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .main-nav li {
+      margin: 0 25px;
+      position: relative;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 12px 20px;
+      border-radius: 30px;
+      display: inline-block;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      background-color: #1e90ff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #1e90ff;
+      transition: width 0.3s;
+    }
+
+    .main-nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------------------- */
+    /* אזור הגיבור (Hero) */
+    /* ---------------------- */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .hero p.about-text {
+      max-width: 700px;
+      margin: 30px auto;
+      line-height: 1.7;
+      font-size: 18px;
+      color: #333;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* כפתור ראשי */
+    .main-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: dodgerblue;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .main-button:hover {
+      background-color: royalblue;
+      transform: scale(1.05);
+    }
+
+    /* ---------------------- */
+    /* תחתית (Footer) */
+    /* ---------------------- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: black;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-direction: row-reverse;
+    }
+
+    .footer-logo {
+      height: 40px;
+    }
+
+    .footer-text {
+      font-size: 18px;
+      color: black;
+      margin-top: -150px;
+    }
+
+    /* ---------------------- */
+    /* אנימציה */
+    /* ---------------------- */
+    .animate {
+      animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* עיצוב חלון הצ'אט */
+    #chatBox {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 300px;
+      height: 400px;
+      background: white;
+      border: 2px solid orange;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      box-shadow: 0 0 10px lightgray;
+      z-index: 999;
+    }
+
+    #chatMessages {
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+
+    #chatMessages .msg {
+      background: lightgray;
+      margin: 5px 0;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+
+    #chatMessages .user {
+      background: lightblue;
+      text-align: right;
+    }
+
+    #chatBox.hidden {
+      display: none;
+    }
+
+    #chatBox input {
+      padding: 5px;
+      flex: 1;
+      border-radius: 8px;
+      border: 1px solid gray;
+      margin-bottom: 5px;
+    }
+
+    #chatBox button {
+      padding: 5px;
+      background: orange;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .chat-btn {
+      margin-top: 10px;
+      background: goldenrod;
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- סרגל ניווט -->
+  <header>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../index/index.html">דף בית</a></li>
+        <li><a href="../categories/categories.html">קטגוריות</a></li>
+        <li><a href="../login/login.html">התחברות</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- אזור הגיבור -->
+  <main class="hero">
+    <h1 class="animate">אודות</h1>
+    <p class="about-text animate">
+      האתר <strong>"מהגליל ועד הנגב"</strong> הוקם כדי לגשר בין עסקים קטנים ליוזמות ואירועים קהילתיים, במיוחד באזורים הפריפריאליים של הגליל והנגב.
+      מטרת המיזם היא לספק פתרון דיגיטלי נגיש ופשוט, שמעודד שיתופי פעולה, מקדם עסקים קטנים ומחזק את הקהילה המקומית.
+      <br><br>
+      <strong>הפלטפורמה מאפשרת:</strong><br>
+      - הצגת עסקים לפי קטגוריות (אוכל, אירועים, אופנה ועוד).<br>
+      - יצירת מועדפים ע"י משתמשים.<br>
+      - טפסי התחברות והרשמה נוחים.<br>
+      <br>
+      אנו מאמינים שהקהילה היא הכוח – באמצעות טכנולוגיה פשוטה ואנושיות גדולה.
+    </p>
+  </main>
+
+  <!-- תחתית -->
+  <footer>
+    <div class="footer-content">
+      <span class="footer-text">אחריי💡TECH</span>
+    </div>
+  </footer>
+
+</body>
+</html>

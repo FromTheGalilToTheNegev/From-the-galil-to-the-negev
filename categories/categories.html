@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>רשימת עסקים</title>
+    <link rel="stylesheet" href="categories.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index/index.html">דף הבית</a></li>
+          <li><a href="../about/about.html">אודות</a></li>
+          <li><a href="../login/login.html">התחברות</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1 class="animate">רשימת עסקים משתתפים</h1>
+    <button id="openCategories" class="animate">קטגוריות</button>
+
+    <div id="categorySidebar" class="sidebar hidden">
+      <button id="closeSidebar">✖</button>
+      <ul>
+        <li data-category="all">הצג הכל</li>
+        <li data-category="favorites">מועדפים</li>
+        <li data-category="food">אוכל</li>
+        <li data-category="events">אירועים</li>
+        <li data-category="fashion">לבוש</li>
+        <li data-category="attractions">אטרקציות</li>
+      </ul>
+    </div>
+
+    <div class="business-list" id="businessList"></div>
+
+    <!-- ===== chat box ===== -->
+    <div id="chatBox" class="chat-box hidden">
+      <div class="chat-header">
+        <span>עוזר אישי דיגיטלי 🤖</span>
+        <button id="closeChat" type="button">✖</button>
+      </div>
+      <div id="chatMessages" class="chat-messages"></div>
+      <div class="chat-input-area">
+        <input id="chatInput" type="text" placeholder="כתוב הודעה..." />
+        <button id="chatSendBtn" type="button">שלח</button>
+      </div>
+    </div>
+    <!-- ==================== -->
+
+    <footer>
+      <div class="footer-content">
+        <span class="footer-text">אחריי💡TECH</span>
+      </div>
+    </footer>
+
+    <script src="categories.js"></script>
+  </body>
+</html>
