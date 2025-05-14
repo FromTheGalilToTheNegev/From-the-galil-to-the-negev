@@ -1,0 +1,54 @@
+login html<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הרשמה כעסק</title>
+  <link rel="stylesheet" href="style/login.css">
+  
+</head>
+<body>
+  <div class="flag-container"></div>
+
+  <header class="main-nav">
+    <ul>
+      <li><a href="index.html">דף הבית</a></li>
+      <li><a href="categories.html">קטגוריות</a></li>
+      <li><a href="about.html">אודות</a></li>
+    </ul>
+  </header>
+
+  <div class="main-container">
+    <div class="image-container">
+      <img id="business-image" src="https://i.imgur.com/KwlU7hC.jpeg" alt="תמונה לעסק">
+    </div>
+
+    <div class="form-container">
+      <h2>הרשמה כעסק</h2>
+      <form id="business-register-form">
+        <input type="text" id="business-name" placeholder="שם העסק" required>
+        <input type="tel" id="business-phone" placeholder="מספר טלפון" required>
+        <input type="email" id="business-email" placeholder="דואר אלקטרוני" required>
+        <select id="business-category" required>
+          <option value="">בחר תחום עיסוק</option>
+          <option value="אוכל">אוכל</option>
+          <option value="ביגוד">ביגוד</option>
+          <option value="רהיטים">רהיטים</option>
+          <option value="קודים">קודים</option>
+        </select>
+        <textarea id="business-description" placeholder="תיאור העסק שלך" rows="4" required></textarea>
+        <input type="password" id="business-password" placeholder="סיסמה" required>
+        <button type="submit">התחבר כעסק</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <span class="footer-text">אחריי💡TECH</span>
+    </div>
+  </footer>
+
+  <script src="script/login.js"></script>
+</body>
+</html>

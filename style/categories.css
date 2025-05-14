@@ -1,0 +1,285 @@
+/* כללי */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* סרגל ניווט עליון */
+.main-nav {
+  background: linear-gradient(135deg, #4f97d3, #0084b4);
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #ffcc00;
+  transform: translateY(-2px);
+}
+
+/* כותרת ראשית */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 30px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+/* כפתור פתיחת קטגוריות */
+#openCategories {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 1001;
+  background-color: #0084b4;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#openCategories:hover {
+  background-color: #005f8a;
+  transform: translateY(-2px);
+}
+
+/* רשימת עסקים */
+.business-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* כרטיס עסק */
+.business {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.business:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.business h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.business p {
+  font-size: 16px;
+  color: #666;
+  margin: 8px 0;
+}
+
+.business button {
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* כפתור מועדפים */
+.favorite-btn {
+  background-color: #32cd32;
+  color: white;
+}
+
+.favorite-btn:hover {
+  background-color: #228b22;
+  transform: scale(1.05);
+}
+
+/* כפתור צ'אט בוט */
+.chat-btn {
+  background-color: #8a2be2;
+  color: white;
+}
+
+.chat-btn:hover {
+  background-color: #7a1dc0;
+  transform: scale(1.05);
+}
+
+/* סיידבר */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #f9f9f9;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  overflow-y: auto;
+  z-index: 1000;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar li {
+  padding: 15px;
+  background-color: #e6e6e6;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: right;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar li:hover {
+  background-color: #c0c0c0;
+}
+
+.sidebar button#closeSidebar {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* צ'אט בוט */
+.chat-box {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 350px;
+  max-height: 450px;
+  background: #f3f3f3;
+  border: 2px solid #8a2be2;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 2000;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.chat-header {
+  background: #8a2be2;
+  color: white;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e1bee7;
+}
+
+.chat-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #ffffff;
+}
+
+.msg {
+  max-width: 80%;
+  padding: 12px 18px;
+  border-radius: 20px;
+  line-height: 1.5;
+  background: #d8bfd8;
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: #d6a1c3;
+  border-radius: 20px 20px 5px 20px;
+}
+
+.chat-input-area {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input-area input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  outline: none;
+  border-radius: 8px;
+}
+
+.chat-input-area button {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  background: #8a2be2;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.chat-input-area button:hover {
+  background: #7a1dc0;
+}
+
